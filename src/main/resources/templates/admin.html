@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Admin Dashboard</h1>
+
+    <h2>Relief Requests</h2>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Victim</th>
+            <th>Relief Needed</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Update</th>
+        </tr>
+
+        <tr th:each="request : ${requests}">
+
+            <td th:text="${request.id}"></td>
+
+            <td th:text="${request.victimName}"></td>
+
+            <td th:text="${request.description}"></td>
+
+            <td th:text="${request.requestDate}"></td>
+
+            <td th:text="${request.status}"></td>
+
+            <td>
+
+                <form action="/admin/status" method="post">
+
+                    <input type="hidden"
+                           name="id"
+                           th:value="${request.id}">
+
+                    <select name="status">
+
+                        <option value="PENDING">
+                            PENDING
+                        </option>
+                        <option value="APPROVED">
+                            APPROVED
+                        </option>
+
+                        <option value="DELIVERED">
+                            DELIVERED
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Update
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- Assign Volunteer -->
+
+    <h2>Assign Volunteer</h2>
+
+    <form action="/admin/assign" method="post">
+
+        <label>Volunteer Name</label>
+
+        <input type="text"
+               name="volunteerName"
+               placeholder="Volunteer Name"
+               required>
+
+        <label>Relief Request ID</label>
+
+        <input type="number"
+               name="reliefRequestId"
+               placeholder="Request ID"
+               required>
+
+        <label>Assigned Date</label>
+
+        <input type="date"
+               name="assignedDate"
+               required>
+
+        <button type="submit">
+            Assign Volunteer
+        </button>
+
+    </form>
+
+
+    <!-- Add Shelter -->
+
+    <h2>Add Shelter</h2>
+
+    <form action="/admin/shelter" method="post">
+
+        <label>Shelter Name</label>
+
+        <input type="text"
+               name="name"
+               placeholder="Shelter Name"
+               required>
+
+        <label>Location</label>
+
+        <input type="text"
+               name="location"
+               placeholder="Location"
+               required>
+
+        <label>Capacity</label>
+
+        <input type="number"
+               name="capacity"
+               placeholder="Capacity"
+               required>
+
+        <label>Available Seats</label>
+
+        <input type="number"
+               name="availableSeats"
+               placeholder="Available Seats"
+               required>
+
+        <button type="submit">
+            Add Shelter
+        </button>
+
+    </form>
+
+
+    <!-- Added Shelters -->
+
+    <h2>All Shelters</h2>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Capacity</th>
+            <th>Available Seats</th>
+        </tr>
+
+        <tr th:each="shelter : ${shelters}">
+
+            <td th:text="${shelter.id}"></td>
+
+            <td th:text="${shelter.name}"></td>
+
+            <td th:text="${shelter.location}"></td>
+
+            <td th:text="${shelter.capacity}"></td>
+
+            <td th:text="${shelter.availableSeats}"></td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- Assignments -->
+
+    <h2>Volunteer Assignments</h2>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Volunteer</th>
+            <th>Request ID</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+
+        <tr th:each="assignment : ${assignments}">
+
+            <td th:text="${assignment.id}"></td>
+
+            <td th:text="${assignment.volunteerName}"></td>
+
+            <td th:text="${assignment.reliefRequestId}"></td>
+
+            <td th:text="${assignment.assignedDate}"></td>
+
+            <td th:text="${assignment.status}"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

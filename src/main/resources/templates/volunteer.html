@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Volunteer Dashboard</title>
+
+    <link rel="stylesheet" th:href="@{/volunteer.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Volunteer Dashboard</h1>
+
+    <h2>Assign Volunteer</h2>
+
+    <form action="/volunteer/assign" method="post">
+
+        <label>Volunteer Name</label>
+
+        <input type="text"
+               name="volunteerName"
+               placeholder="Enter volunteer name"
+               required>
+
+        <label>Relief Request ID</label>
+
+        <input type="number"
+               name="reliefRequestId"
+               placeholder="Enter request ID"
+               required>
+
+        <label>Assigned Date</label>
+
+        <input type="date"
+               name="assignedDate"
+               required>
+
+        <button type="submit">
+            Assign Request
+        </button>
+
+    </form>
+
+
+    <h2>Assigned Relief Requests</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Volunteer</th>
+            <th>Relief Request ID</th>
+            <th>Assigned Date</th>
+            <th>Status</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="assignment : ${assignments}">
+
+            <td th:text="${assignment.id}"></td>
+
+            <td th:text="${assignment.volunteerName}"></td>
+
+            <td th:text="${assignment.reliefRequestId}"></td>
+
+            <td th:text="${assignment.assignedDate}"></td>
+
+            <td th:text="${assignment.status}"></td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

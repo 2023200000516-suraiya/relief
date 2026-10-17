@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background: #f4f7fc;
+    color: #333;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d6efd;
+    padding: 15px 60px;
+}
+nav h2 {
+    color: white;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    margin-left: 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: yellow;
+}
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+    url("https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.hero button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hero button:hover {
+    background: #218838;
+}
+.about {
+    padding: 60px;
+    text-align: center;
+}
+.about h2 {
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+.about p {
+    font-size: 18px;
+    line-height: 30px;
+}
+.services {
+    padding: 60px;
+    text-align: center;
+    background: #eef4ff;
+}
+.services h2 {
+    color: #0d6efd;
+    margin-bottom: 40px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    width: 250px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    transition: .3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card h3 {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+.emergency {
+    text-align: center;
+    background: #dc3545;
+    color: white;
+    padding: 50px;
+}
+.emergency h2 {
+    margin-bottom: 10px;
+}
+.emergency h1 {
+    font-size: 50px;
+}
+footer {
+    text-align: center;
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shelter Management</title>
+
+    <link rel="stylesheet" th:href="@{/shelter.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Shelter Management</h1>
+
+    <h2>Find Nearby Shelter</h2>
+
+    <form action="/shelter/search" method="get">
+
+        <label>Location</label>
+
+        <input type="text"
+               name="location"
+               placeholder="Enter your location"
+               required>
+
+        <button type="submit">
+            Find Shelter
+        </button>
+
+    </form>
+
+
+    <h2>Add New Shelter</h2>
+
+    <form action="/shelter/add" method="post">
+
+        <label>Shelter Name</label>
+
+        <input type="text"
+               name="name"
+               placeholder="Enter shelter name"
+               required>
+
+        <label>Location</label>
+
+        <input type="text"
+               name="location"
+               placeholder="Enter location"
+               required>
+
+        <label>Total Capacity</label>
+
+        <input type="number"
+               name="capacity"
+               placeholder="Enter capacity"
+               required>
+
+        <label>Available Seats</label>
+
+        <input type="number"
+               name="availableSeats"
+               placeholder="Enter available seats"
+               required>
+
+        <button type="submit">
+            Add Shelter
+        </button>
+
+    </form>
+
+
+    <h2>Available Shelters</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Capacity</th>
+            <th>Available Seats</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="shelter : ${shelters}">
+
+            <td th:text="${shelter.id}"></td>
+
+            <td th:text="${shelter.name}"></td>
+
+            <td th:text="${shelter.location}"></td>
+
+            <td th:text="${shelter.capacity}"></td>
+
+            <td th:text="${shelter.availableSeats}"></td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

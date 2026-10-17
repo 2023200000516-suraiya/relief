@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Victim Dashboard</title>
+
+    <link rel="stylesheet" th:href="@{/victim.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Victim Dashboard</h1>
+
+
+    <!-- Request Relief -->
+
+    <h2>Request Relief</h2>
+
+    <form action="/victim/request" method="post">
+
+        <label>Victim Name</label>
+        <input type="text"
+               name="victimName"
+               placeholder="Enter your name"
+               required>
+
+        <label>Relief Needed</label>
+
+        <input type="text"
+               name="description"
+               placeholder="Example: Food, Water, Medicine"
+               required>
+
+        <label>Request Date</label>
+
+        <input type="date"
+               name="requestDate"
+               required>
+
+        <button type="submit">
+            Submit Relief Request
+        </button>
+
+    </form>
+
+
+
+    <!-- Find Nearby Shelter -->
+
+    <h2>Find Nearby Shelter</h2>
+
+    <form action="/victim/shelter" method="get">
+
+        <label>Location</label>
+
+        <input type="text"
+               name="location"
+               placeholder="Enter your location"
+               required>
+
+        <button type="submit">
+            Find Shelter
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

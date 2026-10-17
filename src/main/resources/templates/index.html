@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Relief & Management System</title>
+
+    <link rel="stylesheet" th:href="@{/index.css}">
+</head>
+
+<body>
+
+<nav>
+
+    <ul>
+    <h2>Flood Relief System</h2>
+
+
+        <li><a th:href="@{/}">Index</a></li>
+
+        <li><a th:href="@{/login}">Login</a></li>
+
+        <li><a th:href="@{/register}">Register</a></li>
+
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+        <li><a th:href="@{/victim}">Victim</a></li>
+
+        <li><a th:href="@{/volunteer}">Volunteer</a></li>
+
+        <li><a th:href="@{/shelter}">Shelter</a></li>
+
+        <li><a th:href="@{/relief}">Relief</a></li>
+
+
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <h1>Flood Relief & Management System</h1>
+
+    <p>
+        Helping Flood Victims with Shelter, Food, Medicine and Volunteers.
+    </p>
+
+    <a th:href="@{/register}">
+        <button>Request Relief</button>
+    </a>
+
+</section>
+
+<section id="about" class="about">
+
+    <h2>About Us</h2>
+
+    <p>
+
+        Flood Relief & Management System is designed to help flood affected
+        people by providing shelter, relief distribution and volunteer support.
+
+    </p>
+
+</section>
+
+<section id="services" class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Victim Registration</h3>
+            <p>Flood victims can register and request relief.</p>
+        </div>
+
+        <div class="card">
+            <h3>Shelter Management</h3>
+            <p>Manage available shelters and capacity.</p>
+        </div>
+
+        <div class="card">
+            <h3>Volunteer Management</h3>
+            <p>Assign volunteers to affected areas.</p>
+        </div>
+
+        <div class="card">
+            <h3>Relief Distribution</h3>
+            <p>Distribute food, medicine and emergency support.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="emergency">
+
+    <h2>Emergency Hotline</h2>
+
+    <h1>999</h1>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Flood Relief & Management System | All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+
+</html>

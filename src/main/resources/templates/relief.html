@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relief Request</title>
+
+    <link rel="stylesheet" th:href="@{/relief.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Relief Request Management</h1>
+
+    <h2>Submit Relief Request</h2>
+
+    <form action="/relief/request" method="post">
+
+        <label>Victim Name</label>
+
+        <input type="text"
+               name="victimName"
+               placeholder="Enter victim name"
+               required>
+
+        <label>Relief Needed</label>
+
+        <input type="text"
+               name="description"
+               placeholder="Example: Food, Water, Medicine"
+               required>
+
+        <label>Request Date</label>
+
+        <input type="date"
+               name="requestDate"
+               required>
+        <label>Location</label>
+
+        <input type="text"
+               name="location"
+               placeholder="Enter your area"
+               required>
+
+        <button type="submit">
+            Submit Request
+        </button>
+
+    </form>
+
+
+    <h2>All Relief Requests</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Victim</th>
+            <th>Relief Needed</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Admin Action</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="request : ${requests}">
+
+            <td th:text="${request.id}"></td>
+
+            <td th:text="${request.victimName}"></td>
+
+            <td th:text="${request.description}"></td>
+
+            <td th:text="${request.requestDate}"></td>
+
+            <td th:text="${request.status}"></td>
+
+            <td>
+
+                <form action="/relief/update" method="post" class="update-form">
+
+                    <input type="hidden"
+                           name="id"
+                           th:value="${request.id}">
+
+                    <select name="status">
+
+                        <option value="PENDING">
+                            PENDING
+                        </option>
+
+                        <option value="APPROVED">
+                            APPROVED
+                        </option>
+
+                        <option value="DELIVERED">
+                            DELIVERED
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Update
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

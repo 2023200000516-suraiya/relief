@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Victim Registration</title>
+
+    <link rel="stylesheet" th:href="@{/register.css}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>Flood Relief System</h2>
+
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+
+        <li>
+            <a href="/login">Login</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<div class="register-container">
+
+    <h1>Victim Registration</h1>
+
+    <form action="/register" method="post">
+
+        <label>Full Name</label>
+
+        <input
+                type="text"
+                name="name"
+                placeholder="Enter Full Name"
+                required>
+
+
+        <label>Phone Number</label>
+
+        <input type="text"
+               name="phone"
+               pattern="[0-9]{11}"
+               minlength="11"
+               maxlength="11"
+               required>
+
+
+        <label>Address</label>
+
+        <textarea
+                name="address"
+                rows="4"
+                placeholder="Enter Address"
+                required></textarea>
+
+
+        <label>Email</label>
+
+        <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required>
+
+
+        <label>Password</label>
+
+        <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                required>
+
+
+        <button type="submit">
+            Register
+        </button>
+
+
+        <p>
+            Already have an account?
+
+            <a href="/login">
+                Login
+            </a>
+        </p>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

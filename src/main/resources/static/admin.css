@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3f7;
+    color: #263238;
+    padding: 30px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+h1 {
+    text-align: center;
+    color: #173f5f;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+h2 {
+    width: 100%;
+    padding: 16px 20px;
+    margin-top: 35px;
+    margin-bottom: 0;
+    background: white;
+    color: #173f5f;
+    font-size: 22px;
+    border-radius: 8px 8px 0 0;
+}
+
+
+/* Relief Requests */
+
+h2:nth-of-type(1) {
+    border-left: 6px solid #2f80ed;
+}
+
+
+/* Assign Volunteer */
+
+h2:nth-of-type(2) {
+    border-left: 6px solid #27ae60;
+}
+
+
+/* Add Shelter */
+
+h2:nth-of-type(3) {
+    border-left: 6px solid #f2994a;
+}
+
+
+/* All Shelters */
+
+h2:nth-of-type(4) {
+    border-left: 6px solid #9b51e0;
+}
+
+
+/* Volunteer Assignments */
+
+h2:nth-of-type(5) {
+    border-left: 6px solid #eb5757;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    padding: 25px;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Assign Volunteer Form */
+
+h2:nth-of-type(2) + form {
+    border-top: 4px solid #27ae60;
+}
+
+
+/* Add Shelter Form */
+
+h2:nth-of-type(3) + form {
+    border-top: 4px solid #f2994a;
+}
+
+
+/* Labels */
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #37474f;
+}
+
+
+/* Inputs */
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd6dd;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #fafafa;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2f80ed;
+    background: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Default button */
+
+form > button {
+    background: #2f80ed;
+}
+
+form > button:hover {
+    background: #1c65c1;
+}
+
+
+/* Assign Volunteer button */
+
+h2:nth-of-type(2) + form button {
+    background: #27ae60;
+}
+
+h2:nth-of-type(2) + form button:hover {
+    background: #219653;
+}
+
+
+/* Add Shelter button */
+
+h2:nth-of-type(3) + form button {
+    background: #f2994a;
+}
+
+h2:nth-of-type(3) + form button:hover {
+    background: #d97924;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 35px 0;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Table Header */
+
+th {
+    background: #173f5f;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #173f5f;
+}
+
+
+/* Table Data */
+
+td {
+    padding: 13px;
+    text-align: center;
+    border: 1px solid #e0e6ea;
+    font-size: 14px;
+    background: white;
+}
+
+
+/* Table Hover */
+
+tr:hover td {
+    background: #f4f8fb;
+}
+
+
+td form {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+td form select {
+    width: 140px;
+    padding: 8px;
+}
+
+td form button {
+    width: auto;
+    margin: 0 0 0 5px;
+    padding: 8px 15px;
+    background: #2f80ed;
+    font-size: 13px;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
